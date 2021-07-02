@@ -1,0 +1,30 @@
+.flex-row{
+	display: flex;
+}
+.flex-wrap{
+	flex-wrap: wrap;
+}
+.align-center{
+	align-items: center;
+}
+.justify-between{
+	justify-content: space-between;
+}
+.flex-end{
+	justify-content: flex-end;
+}
+
+
+.bg-white{
+	background-color: #FFFFFF;
+}
+
+/* 按钮注意颜色更改 */
+button[type=primary] {
+	background-color: #42B187;
+}
+
+/* 弹出框 */
+.uni-popup .uni-popup__wrapper{
+	/* width: 60% !important; */
+}
