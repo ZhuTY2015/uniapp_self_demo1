@@ -1,0 +1,30 @@
+.pop-box {
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  text-align: center;
+}
+.pop-box .title {
+  text-align: center;
+  padding: 30rpx;
+}
+.pop-box .content {
+  color: #303031;
+  text-align: center;
+  padding: 0 30rpx 30rpx 30rpx;
+}
+.pop-box .btn-bottom {
+  border-top: 1px solid #C0C0C0;
+  text-align: center;
+}
+.pop-box .btn-bottom view {
+  width: 50%;
+  padding: 20rpx 30rpx;
+}
+.pop-box .btn-bottom view:first-child {
+  border-right: 1px solid #C0C0C0;
+  color: #303031;
+}
+.pop-box .btn-bottom view:last-child {
+  color: #42B187;
+}
+

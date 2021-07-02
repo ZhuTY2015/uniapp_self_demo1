@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/common/login",
+    "pages/user/index",
+    "pages/rank/rank"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#3B4144",
+    "selectedColor": "#42B187",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./static/imgs/index.png",
+        "selectedIconPath": "./static/imgs/index_checked.png"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "排行榜",
+        "iconPath": "./static/imgs/rank.png",
+        "selectedIconPath": "./static/imgs/rank_checked.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "./static/imgs/my.png",
+        "selectedIconPath": "./static/imgs/my_checked.png"
+      }
+    ]
+  },
+  "permission": {},
+  "usingComponents": {
+    "pop-modal": "/components/popModal"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,89 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+
+Page {
+  background-color: #FAFAFA;
+}
+.user-content .item-box .item-top {
+  padding: 30rpx;
+}
+.user-content .item-box .item-top .main-title {
+  font-size: 36rpx;
+}
+.user-content .item-box .item-top .main-title button {
+  background-color: transparent !important;
+  line-height: 1 !important;
+  font-size: 36rpx;
+  text-align: left !important;
+  padding: 0 !important;
+}
+.user-content .item-box .item-top .main-title button::after {
+  border: none !important;
+}
+.user-content .item-box .item-top .sub-title {
+  padding-top: 10rpx;
+  font-size: 28rpx;
+}
+.user-content .item-box .item-top image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.user-content .item-box .item-bottom {
+  margin-top: 20rpx;
+}
+.user-content .item-box .out-login {
+  margin-top: 50rpx;
+  text-align: center;
+  color: #999999;
+}
+
