@@ -1,0 +1,29 @@
+.tab-box {
+  border-bottom: 2px solid #EEEEEE;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  z-index: 99999999999999;
+}
+canvas {
+  z-index: 99 !important;
+}
+.chart-item {
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+.chart-item .charts-item-box {
+  background-color: #F0F0F0;
+  position: relative;
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+}
+.chart-item .charts-item-box .float-ico {
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  z-index: 99999;
+}
+

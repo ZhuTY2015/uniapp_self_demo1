@@ -1,6 +1,6 @@
 <template>
 	<view class="content-box">
-		<view class="title">登录小程序</view>
+		<view class="title">欢迎来到管理平台</view>
 		<!-- 手机号验证码登录 -->
 		<view v-if="pageType==1">
 			<uni-forms :modelValue="formData" ref="form"  :rules="rules">
@@ -33,18 +33,18 @@
 		<view v-if="pageType==2">
 			<uni-forms :modelValue="formData" ref="form"  :rules="rules">
 				<view class="form-item-box">
-					<uni-forms-item  name="account">
+					<uni-forms-item  name="account" class="form-child">
 						<uni-easyinput type="text" :inputBorder="false" placeholderStyle="color:#C0C4CC" maxlength="11" v-model="formData.account" placeholder="请输入用户名" />
 					</uni-forms-item>
 				</view>
 				<view class="form-item-box">
-					<uni-forms-item name="pwd">
+					<uni-forms-item name="pwd" class="form-child">
 						<uni-easyinput type="password" :inputBorder="false" placeholderStyle="color:#C0C4CC" v-model="formData.pwd" maxlength="6" placeholder="请输入您的密码" />
 					</uni-forms-item>
 				</view>
 				
 				<view class="btn-footer">
-					<button type="primary" @click="submitForm">登录</button>
+					<button class="login-btn" @click="submitForm">登录</button>
 				</view>
 			</uni-forms>
 		</view>
@@ -94,8 +94,8 @@
 			}
 		},
 		mounted() {
-			let a = util.generateUUID();
-			console.log(a)
+			
+			
 		},
 		methods: {
 			//点击登录
@@ -115,7 +115,10 @@
 								token:data.userToken
 							}
 							uni.setStorageSync("token",obj);
-							uni.navigateBack();
+							
+							uni.switchTab({
+							    url: '../device/list'
+							});
 						}else{
 							
 						}
@@ -124,6 +127,11 @@
 					
 					
 				}).catch(err =>{
+					uni.showToast({
+						icon:'none',
+						title:"请完善表单信息",
+						duration:2000
+					})
 					console.log('表单错误信息：', err);
 				})
 			},
@@ -160,17 +168,30 @@
 	.content-box{
 		padding: 30rpx;
 		background-color: #FFFFFF;
-		.uni-easyinput__content-input{
-			padding-left: 0 !important;
-		}
+		position: absolute;
+		width: 90%;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%,-60%);
+		// .uni-easyinput__content-input{
+		// 	padding-left: 0 !important;
+		// }
 		.title{
 			font-size: 40rpx;
-			margin-bottom: 60rpx;
+			margin-bottom:100rpx;
+			text-align: center;
 		}
 		.form-item-box{
-			// border-bottom: 1px solid #EEEEEE;
 			position: relative;
-			&::after{
+			.uni-easyinput{
+				background-color: #F3F3F3;
+				padding: 10rpx  0;
+				border-radius: 10rpx;
+			}
+			.form-child{
+				
+			}
+			/* &::after{
 				content: '';
 				position: absolute;
 				left: 0;
@@ -178,7 +199,7 @@
 				bottom: 45rpx;
 				height: 1rpx;
 				background-color: #EEEEEE;
-			}
+			} */
 		}
 		.form-count{
 			font-size: 32rpx;
@@ -189,6 +210,16 @@
 		
 		.btn-footer{
 			margin-top: 80rpx;
+			button.login-btn{
+				border: none;
+				border-radius: 50rpx;
+				background: linear-gradient(to right,#2D8CF0,#B5DEFE);
+				// background-color:#2D8CF0;
+				color: #FFFFFF;
+				&:after{
+					border: none;
+				}
+			}
 		}
 		.tips{
 			font-size: 30rpx;
@@ -206,6 +237,7 @@
 			bottom: 30rpx;
 			font-size: 30rpx;
 			color: #42B187;
+			
 		}
 	}
 	

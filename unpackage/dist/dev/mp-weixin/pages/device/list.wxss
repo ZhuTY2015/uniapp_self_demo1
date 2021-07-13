@@ -1,0 +1,11 @@
+Page {
+  background-color: #F4F4F4;
+}
+.container .tab-search {
+  background-color: #FFFFFF;
+  padding: 30rpx 0;
+}
+.container .tab-search .search-box {
+  border-top: 1px solid #EEEEEE;
+}
+

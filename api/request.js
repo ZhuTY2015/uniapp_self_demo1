@@ -1,9 +1,7 @@
 const baseUrl = 'http://192.168.1.118:8890/';
 import util from '../static/js/util.js';
 let token = uni.getStorageSync('token').token;
-const request = (url = '', reqData = {}, type = 'POST',header={
-	"H-User-Token":token
-}) => {
+const request = (url = '', reqData = {}, type = 'POST',header={"H-User-Token":token}) => {
     return new Promise((resolve, reject) => {
         uni.request({
             method: type,

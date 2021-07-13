@@ -9,14 +9,7 @@
 				</view>
 				<image src="../../static/imgs/header_img.png" mode=""></image>
 			</view>
-			<view class="item-bottom bg-white" @click="bindGoLogin">
-				<uni-list :border="false">
-				    <uni-list-item v-for="(item,ind) in list" :key="ind" 
-					:showArrow="true" :rightText="item.subName"
-					:showExtraIcon="true" :extraIcon="item.icon" :clickable="true"
-					:title="item.name" @click="bindGoLogin"></uni-list-item>
-				</uni-list>
-			</view>
+			
 		</view>
 		<!-- 已登录 -->
 		<view class="item-box" v-if="isLogin">
@@ -29,22 +22,16 @@
 				<image v-if="!userInfo.avatarUrl" src="../../static/imgs/header_img.png" mode=""></image>
 				<image v-else :src="userInfo.avatarUrl" mode=""></image>
 			</view>
-			<view class="item-bottom bg-white">
-				<uni-list :border="false">
-				    <uni-list-item v-for="(item,ind) in list" :key="ind" 
-					:showArrow="true" :rightText="item.subName"
-					:showExtraIcon="true" :extraIcon="item.icon" 
-					:title="item.name"></uni-list-item>
-				</uni-list>
-				
-			</view>
+			
 			<view class="out-login" @click="outLogin">
 				退出登录
 			</view>
 		</view>
 		
 		
-		<popModal :popAll="popAll" ref="childPop"></popModal>
+		<uni-popup ref="popup" type="dialog">
+		    <uni-popup-dialog mode="base" title="提示" content="确认是否退出登录？" :duration="2000" :before-close="true" @close="close" @confirm="confirm"></uni-popup-dialog>
+		</uni-popup>
 		
 	</view>
 </template>
@@ -56,45 +43,8 @@
 			return {
 				isLogin:false,
 				userInfo:'',
-				list:[
-					{
-						name:'简历',
-						icon:{color: '#303031',size: '18',type: 'email'},
-						subName:'完整度10%',
-						url:'',
-					},
-					{
-						name:'投递记录',
-						icon:{color: '#303031',size: '18',type: 'chatbubble'},
-						subName:'',
-						url:'',
-					},
-					{
-						name:'职位收藏',
-						icon:{color: '#303031',size: '18',type: 'star'},
-						subName:'',
-						url:'',
-					},
-					{
-						name:'意见反馈',
-						icon:{color: '#303031',size: '18',type: 'chat'},
-						subName:'',
-					},
-					{
-						name:'隐私设置',
-						icon:{color: '#303031',size: '18',type: 'locked'},
-						subName:'',
-						url:'',
-					},
-				],
-				popAll:{
-					title:'',
-					content:'确认要退出吗？',
-					popType:'message',//message，dialog，share
-					msgType:'success',//提示消息类型 success，warn，error，info
-					cancelTxt:'取消',//取消按钮文字
-					confirmTxt:'确定',//确认按钮文字
-				}
+				
+				
 			}
 		},
 		onShow() {
@@ -106,6 +56,14 @@
 			},
 			close() {
 				this.$refs.popup.close()
+			},
+			confirm(e){
+				console.log(12233)
+				uni.setStorageSync('token',{token:null},);
+				this.close();
+				uni.navigateTo({
+					url:"../common/login"
+				})
 			},
 		
 			//获取个人信息
@@ -134,10 +92,10 @@
 			//退出登录
 			outLogin(){
 				let _this = this;
-				// this.open();
-				this.$refs.childPop.open();
+				this.open();
+				/* this.$refs.childPop.open();
 				return
-				uni.setStorageSync('token',{token:null},);
+				uni.setStorageSync('token',{token:null},); */
 				
 			},
 			

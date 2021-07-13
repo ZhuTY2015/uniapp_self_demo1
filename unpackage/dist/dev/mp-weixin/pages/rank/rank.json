@@ -1,6 +1,9 @@
 {
   "navigationBarTitleText": "排行统计",
   "usingComponents": {
-    "qiun-data-charts": "/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts"
+    "uni-segmented-control": "/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control",
+    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "qiun-data-charts": "/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts",
+    "scan-modal": "/components/scanModal"
   }
 }

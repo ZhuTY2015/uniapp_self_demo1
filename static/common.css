@@ -28,3 +28,11 @@ button[type=primary] {
 .uni-popup .uni-popup__wrapper{
 	/* width: 60% !important; */
 }
+
+
+.padding{
+	padding: 30rpx;
+}
+.padding-sm{
+	padding: 20rpx;
+}

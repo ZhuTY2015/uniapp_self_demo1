@@ -1,9 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/common/home",
     "pages/common/login",
+    "pages/device/list",
+    "pages/index/index",
     "pages/user/index",
-    "pages/rank/rank"
+    "pages/rank/rank",
+    "pages/knowledge/note"
   ],
   "subPackages": [],
   "window": {
@@ -14,20 +17,32 @@
   },
   "tabBar": {
     "color": "#3B4144",
-    "selectedColor": "#42B187",
+    "selectedColor": "#2D8CF0",
     "backgroundColor": "#FFFFFF",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "./static/imgs/index.png",
-        "selectedIconPath": "./static/imgs/index_checked.png"
+        "pagePath": "pages/device/list",
+        "text": "设备管理",
+        "iconPath": "./static/imgs/sb.png",
+        "selectedIconPath": "./static/imgs/sb_checked.png"
+      },
+      {
+        "pagePath": "pages/knowledge/note",
+        "text": "知识库",
+        "iconPath": "./static/imgs/zs.png",
+        "selectedIconPath": "./static/imgs/zs_checked.png"
       },
       {
         "pagePath": "pages/rank/rank",
-        "text": "排行榜",
-        "iconPath": "./static/imgs/rank.png",
-        "selectedIconPath": "./static/imgs/rank_checked.png"
+        "text": "统计",
+        "iconPath": "./static/imgs/tj.png",
+        "selectedIconPath": "./static/imgs/tj_checked.png"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "监控",
+        "iconPath": "./static/imgs/jk.png",
+        "selectedIconPath": "./static/imgs/jk_checked.png"
       },
       {
         "pagePath": "pages/user/index",
